@@ -1,0 +1,23 @@
+rails g migration add_column_to_products sub_category_id:integer
+
+rake db:migrate
+
+--------------------------------------------------------------------
+Steps to change once new column is added:
+
+model
+write in migration file
+rake db:migrate
+add validations
+add associattions
+add controllers
+add actions inside controller along with your view files
+
+-----------------------------------------------------------------------
+
+COMMAND:  rails g migration add_column_to_products sub_category_id:integer
+
+rails g migration add_column_to_sub_categories category_id:integer
+
+
+----------------------------------------------------------------------

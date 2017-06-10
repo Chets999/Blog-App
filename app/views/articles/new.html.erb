@@ -1,0 +1,29 @@
+<h2> Create New Articles </h2>
+
+<%= form_for @article do |a| %>
+
+<% if @article.errors.any? %>
+
+<ul>
+	<% @article.errors.full_messages.each do |msg| %>
+
+	<li><%= msg %></li>
+
+	<% end %>
+	</ul>
+
+<% end %>
+
+
+<%= a.label :title %>
+<%= a.text_field :title %><br>
+<%= a.label :body %>
+<%= a.text_field :body %><br>
+<%= a.label :Publish_Date %>
+<%= a.text_field :publish_date %><br>
+<%= a.label :Category_ID %>
+<%= a.text_field :category_id %><br>
+
+<%= a.submit %>
+
+<% end %>

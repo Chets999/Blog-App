@@ -1,0 +1,35 @@
+<h2> Your Cart Items :<%= @cartlineitems.length %> </h2>
+
+<% @cartlineitems.each do |cartlineitem| %>
+
+	<li><%= link_to cartlineitem.article.title, article_path(cartlineitem.article.id) %> </li>
+
+<% end %>
+
+
+<table border="1" >
+		<thead>
+					<tr>
+						<th>#</th>
+						<th>Title</th>
+						<th>Quantity</th>
+					</tr>
+		</thead>
+
+		<tbody>
+				<tr>
+					<% @cartlineitems.each_with_index do |cartlineitem,index| %>
+
+						<td><%= index +1 %></td>
+						<td><%= cartlineitem.article.title %></td>
+						<td><%= cartlineitem.quantity %></td>
+
+					<% end %>
+
+				</tr>
+
+		</tbody>
+</table>
+
+
+<%= link_to "Continue Shopping", categories_path %>

@@ -1,0 +1,74 @@
+GEM : devise is used for User Authetntication system
+Devise gives 10 modules for authentication
+1. Database Authenticable
+2. omniauthable - social plattforms to login into our app
+3. confirmable --email confirmation
+4. Recoverable --  Forgot password
+5. registrable 
+6. Rememberable -- login 
+7. Trackable
+8. Timeoutable - 
+9. Validatabale
+10.Lockable
+----------------------------------------------------------------------------
+Setting up user authentication:
+
+1. in gemfile
+
+gem 'devise'
+
+2. bundle install
+
+3. rails generate devise install
+
+*The default landing page of the website can be controlled by root command in routes.rb file
+* Alert is for Error conditions
+* Notice is for Success Condition
+
+4. rails g devise:views
+
+5. rails generate devise User
+
+	Add additional Column
+	t.boolean :is_admin, default: false
+
+6. rake db:migrate
+
+7. re-start server : rails s
+
+----------------------
+
+Method at Views                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

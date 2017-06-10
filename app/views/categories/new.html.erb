@@ -1,0 +1,9 @@
+<h2> Add New Category for the Blog </h2>
+
+<%= form_for @category do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :Description %>
+<%= f.text_field :description %> <br>
+<%= f.submit %>
+<% end %>

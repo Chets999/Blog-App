@@ -1,0 +1,21 @@
+<h2> Category : <%= @category.name %></h2>
+
+<% if @article.empty? %>
+
+<p> No Record Found </p>
+
+<% else %>
+
+
+<% @article.each do |article| %>
+
+ <h3><li><%= link_to article.title, article_path(article.id) %></li></h3>
+ 	<% article.comments.each do |comment| %>
+ 	<h6> COMMENTS: </h6>
+ 	<ol><%= comment.title %> -- <%= comment.body %></ol>
+ 	<% end %>
+	
+<% end %>
+
+
+<% end %>

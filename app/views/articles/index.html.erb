@@ -1,0 +1,20 @@
+<h2> LISTING ARTICLES  </h2>
+<ol>
+
+<% @articles.each do |article| %>
+
+<li>Title :<%= link_to article.title, article_path(article.id), target: "_blank" %>
+	Body :<%= article.body %>
+	Publish_Date <%= article.publish_date %>
+	Cat:id <%= article.category_id %>	
+			<%= Category.find(article.category_id).name %>
+	</li>
+
+<% end %>
+
+</ol>
+
+<%= link_to "Add New Article", new_article_path, target: "_blank" %>
+
+
+

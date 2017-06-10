@@ -1,0 +1,13 @@
+<h2>BLOG: CATEGORIES</h2>
+
+<ol>
+<% @categories.each do |category| %>
+	<li><%= category.name %> (<%= link_to Article.where('category_id = ?',category.id).length,category_path(category.id)  %>)
+	    	</li>
+<% end %>
+</ol>
+
+<%= link_to "Add New Category", new_category_path,target: "_blank"  %>
+
+
+

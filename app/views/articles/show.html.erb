@@ -1,0 +1,49 @@
+<h2> Display All details of the article : <%= @article.title %></h2>
+
+<%= link_to "Edit", edit_article_path(@article.id) %> | 
+<%= link_to "Destroy",article_path(@article.id), method: :delete, data: {confirm: "Are you sure ?"} %><br>
+
+
+Category: <%= @article.category.name %><br/>
+TITLE:    <%=  @article.title %><br/>
+Body:     <%=  @article.body %><br/>
+Publish_Date:<%=  @article.publish_date %><br/>
+
+<h2> Add to Cart </h2>
+
+<%= form_for @cartlineitem do |f| %>
+
+<%= f.label :quantity %>
+<%= f.select :quantity , (1..5) %><br/><br/>
+
+<%= f.hidden_field :article_id, value: @article.id %>
+
+<%= f.submit "Add to Cart" %>
+
+<% end %>
+
+
+<h2>Comment: (<%= @article.comments.length %> )</h2>
+<ul>
+<% @article.comments.each do |comment| %>
+	<%#= comment.user.email %> Commented as below 
+	<li><%= comment.title %> -- <%= comment.body %> </li>
+
+<% end %>
+</ul>
+
+<h2> Add Comments </h2>
+<%= form_for @comment do |f| %>
+<%= f.label :Title %><br/>
+<%= f.text_field :title %><br/>
+<%= f.label :Body %><br/>
+<%= f.text_area :body %><br/>
+<%= f.hidden_field :article_id, value: @article.id %><br/>
+<%= f.submit %><br/>
+
+<% end %>
+
+<%= link_to "Back",articles_path %> 
+
+
+
